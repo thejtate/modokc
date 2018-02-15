@@ -1,0 +1,77 @@
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 15;
+
+  .social {
+    position: absolute;
+    top: 30%;
+    color: #cb9b2b;
+
+    p {
+      display: inline-block;
+      margin: 0 15px 0 0;
+      vertical-align: middle;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: inline-block;
+      vertical-align: middle;
+
+      li {
+        display: inline-block;
+        margin: 0 5px 0 0;
+        vertical-align: middle;
+
+        a {
+          display: block;
+          @include transition(all .3s);
+
+          &:hover {
+            opacity: .7;
+          }
+        }
+
+        &.soc-1 a {
+          @include oneline-sprite-box($icons, soc-1-a);
+        }
+
+        &.soc-2 a {
+          @include oneline-sprite-box($icons, soc-2-a);
+        }
+      }
+    }
+  }
+
+  .logo {
+    float: left;
+    @include transition(all .3s);
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  .nav {
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%));
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        display: inline-block;
+        margin-right: 25px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

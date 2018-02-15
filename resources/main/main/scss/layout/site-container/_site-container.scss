@@ -1,0 +1,7 @@
+.site-container {
+  max-width: $width;
+  width: 100%;
+  margin: 0 auto;
+  @include clearfix();
+  position: relative;
+}

@@ -1,0 +1,25 @@
+.section-items {
+
+  .item {
+    float: left;
+    width: 50%;
+
+    .inner {
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    .img {
+      width: 90px;
+      margin: 0 auto 15px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .text {
+      margin-bottom: 20px;
+    }
+  }
+}

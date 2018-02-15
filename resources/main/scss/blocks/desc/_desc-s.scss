@@ -1,0 +1,26 @@
+.b-desc {
+  padding: 22px 0;
+
+  .img {
+    position: relative;
+    left: 0;
+    @include transform(translateX(0));
+    width: 20%;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 30px;
+    display: block;
+  }
+
+  .text {
+    font-size: 24px;
+    display: block;
+
+    strong {
+      font-size: 21px;
+    }
+  }
+
+}

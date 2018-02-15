@@ -1,0 +1,42 @@
+&.section-faq {
+  background: #cb9b2b;
+  text-align: center;
+
+  h2 {
+    color: #6d0c2f;
+  }
+
+  .item {
+    background: #be8d1a;
+    text-align: left;
+
+    .letter {
+      font-family: $montserrat-extrabold;
+      text-transform: uppercase;
+      float: left;
+      line-height: 1;
+    }
+
+    .text {
+      overflow: hidden;
+      padding-top: 5px;
+    }
+
+    .question, .answer {
+      @include clearfix();
+    }
+
+    .question {
+      margin-bottom: 5px;
+
+      .text {
+        font-family: $montserrat-bold;
+      }
+    }
+
+    .answer {
+      color: #e4e9b1;
+    }
+  }
+
+}

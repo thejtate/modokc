@@ -1,0 +1,30 @@
+
+.section-items {
+
+  .item {
+    min-height: 320px;
+    padding-bottom: 80%;
+
+    &:first-child, &:last-child {
+      min-height: 0;
+    }
+
+    .inner {
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    .img {
+      width: 25%;
+      margin: 0 auto 15px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .text {
+      margin-bottom: 20px;
+    }
+  }
+}

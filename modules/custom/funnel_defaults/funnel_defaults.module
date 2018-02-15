@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Funnel defaults things for every project
+ */
+
+// implementation of hook_field_create_instance()
+// sets all labels to Hidden for new fields
+function funnel_defaults_field_create_instance($instance){
+  // fetch the instance info
+  $instance_info = field_info_instance(
+    $instance['entity_type'],
+    $instance['field_name'],
+    $instance['bundle']
+  );
+
+  // set label in each display to hidden
+  foreach( $instance_info['display'] as &$display ){
+    $display['label'] = 'hidden';
+  }
+
+  // save back to disk
+  field_update_instance($instance_info);
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function funnel_defaults_form_alter(&$form, &$form_state, $form_id) {
+  //Alter defaults settings for adding content types
+  if($form_id == 'node_type_form') {
+    if(!empty($form['submission']['node_preview'])) {
+      $form['submission']['node_preview']['#default_value'] = 0 ;
+    }
+    if(!empty($form['workflow']['node_options'])) {
+      $form['workflow']['node_options']['#default_value'] = array(0 => 'status') ;
+    }
+
+    if(!empty($form['display']['node_submitted'])) {
+      $form['display']['node_submitted']['#default_value'] = FALSE;
+    }
+
+    if(!empty($form['comment']['comment'])) {
+      $form['comment']['comment']['#default_value'] = 1;
+    }
+
+  }
+}

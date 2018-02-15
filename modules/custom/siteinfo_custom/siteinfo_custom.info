@@ -1,0 +1,11 @@
+name = Siteinfo custom
+description = Siteinfo custom
+package = custom
+core = 7.x
+version = 7.x-1.x
+
+configure = admin/site-info-custom/config
+
+;files[] =
+;dependencies[] =
+

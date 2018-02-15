@@ -1,0 +1,11 @@
+name = Modok
+description = theme for mod-ok
+core = 7.x
+
+; CSS
+stylesheets[all][] = css/styles.css
+stylesheets[all][] = css/custom.css
+
+; JS
+scripts[] = js/lib/html5.js
+scripts[] = js/js.js

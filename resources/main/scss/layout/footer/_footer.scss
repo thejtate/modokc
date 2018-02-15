@@ -1,0 +1,57 @@
+.site-footer {
+  background: #6d0c2f;
+  text-align: center;
+  color: #e4e9b1;
+  position: relative;
+
+  .social {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    right: 90px;
+    @include transform(translateY(-50%));
+
+    li {
+      display: inline-block;
+      margin-right: 35px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.soc-1 a {
+        @include oneline-sprite-box($icons, soc-1);
+      }
+
+      &.soc-2 a {
+        @include oneline-sprite-box($icons, soc-2);
+      }
+
+      a {
+        display: block;
+        @include transition(opacity .3s);
+
+        &:hover {
+          opacity: .7;
+        }
+      }
+    }
+  }
+
+  .logo {
+
+    a {
+      @include transition(opacity .3s);
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}

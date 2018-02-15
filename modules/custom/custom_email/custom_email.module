@@ -1,0 +1,57 @@
+<?php
+define('EMAILS_LIST_FILE_PATH', __DIR__ . '/emails_list.json');
+define('WEBFORM_LEGISLATION_NID', '2');
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function custom_email_form_alter(&$form, &$form_state, $form_id) {
+  // Add validation for a particular Webform node:
+  if ($form_id == 'webform_client_form_' . WEBFORM_LEGISLATION_NID) {
+    $form['#validate'][] = 'modok_webform_legislation_validate';
+  }
+}
+
+/**
+ * Submit handler for Webform ID #2.
+ */
+function modok_webform_legislation_validate(&$form, &$form_state) {
+
+  $zip = $form['submitted']['zip']['#value'];
+  $reciver = get_reciever_emails_by_zip($zip);
+  if (!empty($reciver)) {
+    $form_state['values']['submitted']['receiver_email'][] .= $reciver;
+  }
+  else {
+    form_set_error('zip', 'Please enter a valid Oklahoma zip code');
+    $form['messages']['#markup'] = theme('status_messages');
+  }
+
+}
+
+/**
+ * Get associated emails list by zip code. From emails_list data file.
+ *
+ * @param $zip
+ * @return mixed bool, array emails with names
+ */
+function get_reciever_emails_by_zip($zip) {
+  $result = '';
+  $node = node_load(WEBFORM_LEGISLATION_NID);
+  $field = field_get_items('node', $node, 'field_legislator_contacts_fc', $node->language);
+  foreach ($field as $key => $item) {
+    // Load the field collection.
+    $fc_array = field_collection_field_get_entity($item);
+    $zip_array = explode(', ', $fc_array->field_contacts_fc_zip_txt[LANGUAGE_NONE][0]['value']);
+    foreach ($zip_array as $zip_code) {
+      if ($zip_code == $zip) {
+        $result[] = $fc_array->field_contacts_fc_email[LANGUAGE_NONE][0]['email'];
+      }
+    }
+  }
+  if (!empty($result)){
+    $result = implode(', ', $result);
+  }
+  return $result;
+}
+

@@ -1,0 +1,29 @@
+&.section-vote {
+  background: #e4e9b1;
+
+  .img {
+    text-align: center;
+  }
+
+  .item {
+    background: #edf3c0;
+    position: relative;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      @include pseudo-block($top: -25px, $left: 50%);
+      @include transform(translateX(-50%));
+      @include oneline-sprite-box($icons, icon-yes)
+    }
+  }
+
+  h3 {
+    font-family: $montserrat-bold;
+    text-transform: uppercase;
+    color: #cb9b2b;
+    text-align: center;
+  }
+}

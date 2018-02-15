@@ -1,0 +1,20 @@
+$icons: sprite-map('icons/*.png', $spacing: 8px, $layout: 'smart');
+//$h-sprites: sprite-map('h-sprites/*.png',$layout: 'vertical', $spacing: 8px);
+//$v-sprites: sprite-map('v-sprites/*.png', $layout: 'horizontal', $spacing: 8px);
+
+$experimental-support-for-svg: true;
+$experimental-support-for-opera: false;
+
+//width
+$width: 990px;
+$width-tablet: 768px;
+$width-mobile: 480px;
+
+//color
+$color: #502610;
+
+//fonts
+$montserrat-bold: 'montserrat-bold';
+$montserrat-regular: 'montserrat-regular';
+$montserrat-extrabold: 'montserrat-extrabold';
+$montserrat-light: 'montserrat-light';

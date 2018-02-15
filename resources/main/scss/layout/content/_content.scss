@@ -1,0 +1,38 @@
+.content-wrapper {
+
+  .cols {
+    @include clearfix();
+
+    &.cols-2 .col {
+
+      ul {
+        padding: 0;
+        list-style: none;
+
+        li {
+          position: relative;
+          margin-bottom: 5px;
+          padding-left: 7px;
+
+          &:before {
+            @include pseudo-block($top: 6px, $left: 0);
+            width: 4px;
+            height: 4px;
+            background: #502610;
+            @include border-radius(50%);
+          }
+        }
+      }
+    }
+  }
+
+  .tabs{
+    position: relative;
+    z-index: 100;
+
+    a{
+      color: #000;
+    }
+  }
+
+}

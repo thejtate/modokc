@@ -1,0 +1,116 @@
+.form-email {
+
+  select, input:not([type=submit]), textarea {
+    @include input-placeholder($color: #c49237);
+    font-family: $montserrat-light;
+    color: #813948;
+
+    &.error {
+      @include box-shadow(inset 0 0 5px 3px #f1c39b);
+    }
+  }
+
+  .text {
+    margin-top: 20px;
+    @include clear-box();
+  }
+
+  .bottom-control {
+    margin-top: 60px;
+    padding-right: 200px;
+
+    .form-item {
+      margin: 0;
+    }
+  }
+
+  .form-actions {
+    position: absolute;
+    margin: 0;
+    right: 70px;
+    bottom: -22px;
+    height: 44px;
+
+    &:before {
+      @include pseudo-block($left: 100%, $top: 0);
+      border-bottom: 22px solid transparent;
+      border-top: 22px solid transparent;
+      border-left: 8px solid #c49237;
+      @include transition(border-left-color .3s);
+    }
+
+    &:hover {
+
+      &:before {
+        border-left-color: #813948;
+      }
+
+      input {
+        background: #813948;
+      }
+    }
+
+    input {
+      height: 44px;
+      padding: 8px 48px;
+      background: #c49237;
+      border: none;
+      font-size: 22px;
+      font-family: $montserrat-bold;
+      color: #fff;
+      @include transition(background .3s);
+    }
+  }
+
+  #notice-wrapper {
+    margin-bottom: 14px;
+    padding: 14px;
+    font-size: 14px;
+
+    &.status {
+      background: rgba(0, 255, 0, .2);
+    }
+
+    &.error {
+      background: rgba(255, 0, 0, .2);
+    }
+  }
+
+  .form-item.webform-component {
+    position: relative;
+
+    input[type="checkbox"] {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      z-index: -1;
+
+      &:checked + label:before {
+        @include oneline-sprite($icons, icon-checkbox-active);
+      }
+    }
+
+    input[type="checkbox"] + label {
+      cursor: pointer;
+      position: relative;
+      padding-left: 32px;
+      line-height: 1.2;
+
+      &:before {
+        @include pseudo-block($left: 0, $top: 50%);
+        @include translateY(-50%);
+        @include oneline-sprite-box($icons, icon-checkbox);
+      }
+    }
+  }
+
+  .captcha {
+    border: none;
+    padding: 0;
+    margin: 0 0 50px;
+
+    legend {
+      display: none;
+    }
+  }
+}

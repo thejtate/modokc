@@ -1,0 +1,44 @@
+.b-desc {
+  text-align: center;
+  background: #cb9b2b;
+  position: relative;
+
+  &:before {
+    @include pseudo-block($bottom: -34px, $left: 50%);
+    border-left: 35px solid transparent;
+    border-top: 35px solid #cb9b2b;
+    border-right: 35px solid transparent;
+    @include transform(translateX(-50%));
+  }
+
+  .img {
+    position: absolute;
+    left: 50%;
+    @include transform(translateX(-50%));
+  }
+
+  strong {
+    color: #6d0c2f;
+  }
+
+  .title {
+    display: inline-block;
+    font-family: $montserrat-light;
+    vertical-align: middle;
+
+    strong {
+      font-family: $montserrat-extrabold;
+    }
+  }
+
+  .text {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+
+    strong {
+      display: block;
+    }
+  }
+
+}

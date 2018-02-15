@@ -1,0 +1,58 @@
+.b-email {
+  color: #813948;
+  font-size: 16px;
+  line-height: 2;
+
+  .inner {
+    position: relative;
+    max-width: 744px;
+    margin: 0 auto 50px;
+    padding: 60px 60px 12px;
+    background: #edf3c0;
+  }
+
+  .title {
+    font-size: 72px;
+    color: #c49237;
+    font-family: $montserrat-extrabold;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  ul {
+    font-family: $montserrat-bold;
+    margin-bottom: 20px;
+    line-height: 1.2;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+
+  .items {
+    margin: 40px 0;
+    text-align: center;
+
+    .item {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 90px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  .img {
+    text-align: center;
+  }
+
+  a {
+    color: #813948;
+  }
+}

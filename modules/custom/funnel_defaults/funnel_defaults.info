@@ -1,0 +1,8 @@
+name = Funnel defaults
+description = Funnel default things for every project
+package = funnel
+core = 7.x
+version = 7.x-1.x
+
+;files[] =
+;dependencies[] = 

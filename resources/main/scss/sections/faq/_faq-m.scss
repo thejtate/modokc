@@ -1,0 +1,28 @@
+.section-faq {
+
+  .img {
+    width: 45px;
+    margin: 0 auto 15px;
+  }
+
+  h2 {
+    margin-bottom: 50px;
+  }
+
+  .item {
+    padding: 14px 20px;
+    margin-bottom: 20px;
+
+    .letter {
+      font-size: 65px;
+      margin-right: 25px;
+    }
+
+    .question {
+
+      .text {
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+&.section-logo {
+  text-align: center;
+  background: image-url('bg/section-logo.jpg') no-repeat center fixed;
+  @include background-size(cover);
+}

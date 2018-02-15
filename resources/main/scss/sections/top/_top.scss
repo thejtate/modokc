@@ -1,0 +1,45 @@
+&.section-top {
+  background: image-url('bg/section-one.jpg') no-repeat fixed center;
+  @include background-size(cover);
+  text-align: center;
+
+  h1 {
+    color: #cb9b2b;
+    text-transform: uppercase;
+    font-family: $montserrat-extrabold;
+
+    span {
+      color: #e4e9b1;
+    }
+  }
+
+  .item {
+    display: inline-block;
+    color: #cb9b2b;
+    font-family: $montserrat-bold;
+    text-align: left;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .img {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+
+      img {
+        vertical-align: middle;
+      }
+    }
+
+    .text {
+      display: inline-block;
+      vertical-align: middle;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

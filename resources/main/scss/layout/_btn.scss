@@ -1,0 +1,18 @@
+.btn-wrapp {
+
+  &.style-a a {
+    display: inline-block;
+    background: #e4e9b1;
+    color: #6d0c2f;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-family: $montserrat-extrabold;
+    @include transition(all .3s);
+
+    &:hover {
+      color: #e4e9b1;
+      background: #CB9B2B;
+    }
+  }
+}

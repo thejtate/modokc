@@ -1,0 +1,5 @@
+name = Custom email
+description = Send mail to legislators by Zip code from webform
+package = custom
+core = 7.x
+version = 7.x-1.x

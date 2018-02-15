@@ -1,0 +1,32 @@
+.b-email {
+  font-size: 14px;
+
+  .inner {
+    padding: 20px 20px 50px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .items {
+    margin: 30px 0;
+
+    .item {
+      margin-left: 20px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .text, p {
+    margin-top: 10px;
+  }
+
+  .bottom-control {
+    padding-right: 0;
+    margin-top: 0;
+  }
+}

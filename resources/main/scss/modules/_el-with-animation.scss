@@ -1,0 +1,82 @@
+.el-with-animation {
+  @include transition(opacity 1s, transform 1s);
+
+  &.animate-opacity {
+    opacity: 0;
+  }
+
+  &.animate-up-to-down {
+    @include transform(translate(0, -100px));
+
+    &.animate-zoom-in {
+      @include transform(translate(0, -100px) scale(.7));
+    }
+
+    &.animate-zoom-out {
+      @include transform(translate(0, -100px) scale(1.25));
+    }
+  }
+
+  &.animate-down-to-up {
+    @include transform(translate(0, 100px));
+
+    &.animate-zoom-in {
+      @include transform(translate(0, 100px) scale(.7));
+    }
+
+    &.animate-zoom-out {
+      @include transform(translate(0, 100px) scale(1.25));
+    }
+  }
+
+  &.animate-right-to-left {
+    @include transform(translate(100px, 0));
+
+    &.animate-zoom-in {
+      @include transform(translate(100px, 0) scale(.7));
+    }
+
+    &.animate-zoom-out {
+      @include transform(translate(100px, 0) scale(1.25));
+    }
+  }
+
+  &.animate-left-to-right {
+    @include transform(translate(-100px, 0));
+
+    &.animate-zoom-in {
+      @include transform(translate(-100px, 0) scale(.7));
+    }
+
+    &.animate-zoom-out {
+      @include transform(translate(-100px, 0) scale(1.25));
+    }
+  }
+
+  &.animate-zoom-in {
+    @include transform(scale(.7));
+  }
+
+  &.animate-zoom-out {
+    @include transform(scale(1.25));
+  }
+
+  &.animating-end {
+
+    &.animate-opacity {
+      opacity: 1;
+    }
+
+    &.animate-up-to-down, &.animate-down-to-up, &.animate-right-to-left, &.animate-left-to-right {
+      @include transform(translate(0, 0));
+
+      &.animate-zoom-in, &.animate-zoom-out {
+        @include transform(translate(0, 0) scale(1));
+      }
+    }
+
+    &.animate-zoom-in, &.animate-zoom-out {
+      @include transform(scale(1));
+    }
+  }
+}

@@ -1,0 +1,25 @@
+
+.section-items {
+
+  .item {
+    min-height: 320px;
+
+    .inner {
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    .img {
+      width: 25%;
+      margin: 0 auto 15px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .text {
+      margin-bottom: 20px;
+    }
+  }
+}

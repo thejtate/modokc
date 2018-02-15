@@ -1,0 +1,105 @@
+<?php
+
+/**
+ * @file
+ * Siteinfo custom
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function siteinfo_custom_menu() {
+  $items = array();
+
+  $items['admin/site-info-custom/config'] = array(
+    'title' => 'Site Configuration',
+    'description' => 'Site Configuration page',
+    'type' => MENU_NORMAL_ITEM,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('siteinfo_custom_site_setings_form'),
+    'access arguments' => array('administer custom siteinfo content configuration'),
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function siteinfo_custom_permission() {
+  $return = array();
+
+  $return['administer custom siteinfo content configuration'] = array(
+    'title' => t('Allow to administer custom site settings'),
+  );
+
+  return $return;
+}
+
+/**
+ * Site configuration form.
+ */
+function siteinfo_custom_site_setings_form($form) {
+
+  $form['socials'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Social links'),
+    '#weight' => 1,
+    '#collapsible' => FALSE,
+    '#collapsed' => FALSE,
+  );
+
+  $form['socials']['siteinfo_facebook'] = array(
+    '#type' => 'textfield',
+    '#required' => FALSE,
+    '#title' => t('Facebook url'),
+    '#default_value' => variable_get('siteinfo_facebook', ''),
+  );
+  $form['socials']['siteinfo_twitter'] = array(
+    '#type' => 'textfield',
+    '#required' => FALSE,
+    '#title' => t('Twitter url'),
+    '#default_value' => variable_get('siteinfo_twitter', ''),
+  );
+
+  $form['footer_data'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Footer site info'),
+    '#weight' => 1,
+    '#collapsible' => FALSE,
+    '#collapsed' => FALSE,
+  );
+
+  $form['footer_data']['siteinfo_copyright'] = array(
+    '#type' => 'textfield',
+    '#required' => FALSE,
+    '#title' => t('Copyright'),
+    '#description' => t(' Use %year% instead of the actual date (do not omit % sign)'),
+    '#default_value' => variable_get('siteinfo_copyright', ''),
+  );
+  $form['footer_data']['siteinfo_description'] = array(
+    '#type' => 'textfield',
+    '#required' => FALSE,
+    '#title' => t('Description'),
+    '#description' => t('Describe top social links'),
+    '#default_value' => variable_get('siteinfo_description', ''),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function siteinfo_custom_preprocess_page(&$vars) {
+  $facebook_url = variable_get('siteinfo_facebook', '');
+  if(!empty($facebook_url)) {
+    $vars['facebook_link'] = l('', $facebook_url);
+  }
+  $twitter_url = variable_get('siteinfo_twitter', '', array('attributes' => array('target'=>'_blank')));
+  if(!empty($twitter_url)) {
+    $vars['twitter_link'] = l('', $twitter_url, array('attributes' => array('target'=>'_blank')));
+  }
+
+  $vars['copyright'] = str_replace('%year%', date("Y"), variable_get('siteinfo_copyright', ''));
+  $vars['description'] = variable_get('siteinfo_description', '');
+}

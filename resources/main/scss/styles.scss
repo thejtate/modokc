@@ -1,0 +1,106 @@
+@import "compass";
+
+//base styles
+@import "common/mixins";
+@import "common/fonts";
+@import "common/settings";
+@import "common/normalize";
+@import "common/helpers";
+@import "common/defaults/defaults";
+
+//forms
+@import "forms/forms";
+@import "forms/email";
+
+//layout
+@import "layout/header/header";
+@import "layout/wrappers";
+@import "layout/content/content";
+@import "layout/footer/footer";
+@import "layout/site-container/site-container";
+@import "layout/btn";
+
+//blocks
+@import "blocks/desc/desc";
+@import "blocks/email/email";
+
+//pages
+
+//section
+@import "sections/sections";
+
+@media (max-width: 870px) {
+  @import "layout/header/header-s";
+}
+
+@media (max-width: $width-tablet - 1) {
+
+  //layout
+
+  @import "layout/site-container/site-container-m";
+  @import "layout/footer/footer-s";
+  @import "layout/content/content-s";
+
+  //sections
+  @import "sections/top/top-s";
+  @import "sections/vote/vote-s";
+  @import "sections/logo/logo-s";
+  @import "sections/faq/faq-s";
+  @import "sections/items/items-s";
+
+  //blocks
+  @import "blocks/desc/desc-s";
+  @import "blocks/email/email-s";
+
+  //common
+  @import "common/defaults/defaults-s";
+}
+
+@media (min-width: $width-tablet) and (max-width: $width - 1) {
+
+  //layout
+  @import "layout/header/header-m";
+  @import "layout/site-container/site-container-m";
+  @import "layout/footer/footer-m";
+  @import "layout/content/content-l";
+
+  //sections
+  @import "sections/top/top-m";
+  @import "sections/vote/vote-m";
+  @import "sections/logo/logo-m";
+  @import "sections/faq/faq-m";
+  @import "sections/items/items-m";
+
+  //blocks
+  @import "blocks/desc/desc-m";
+
+  //common
+  @import "common/defaults/defaults-m";
+
+}
+
+@media (min-width: $width) {
+
+  //layout
+  @import "layout/header/header-l";
+  @import "layout/site-container/site-container-l";
+  @import "layout/footer/footer-l";
+  @import "layout/content/content-l";
+
+  //sections
+  @import "sections/top/top-l";
+  @import "sections/vote/vote-l";
+  @import "sections/logo/logo-l";
+  @import "sections/faq/faq-l";
+  @import "sections/items/items-l";
+
+  //blocks
+  @import "blocks/desc/desc-l";
+
+  //modules
+  @import "modules/el-with-animation";
+
+  //common
+  @import "common/defaults/defaults-l";
+
+}
